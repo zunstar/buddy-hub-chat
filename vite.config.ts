@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "public", // 빌드 결과를 public 폴더에 생성
     target: "esnext", // 최신 브라우저를 목표로 빌드
     cssCodeSplit: true, // CSS 코드 분리
     sourcemap: false, // 소스맵 비활성화 (프로덕션 빌드 최적화)
