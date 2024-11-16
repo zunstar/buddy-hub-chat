@@ -1,5 +1,5 @@
-import { getAnalytics } from 'firebase/analytics'
 import { initializeApp } from 'firebase/app'
+import { getAnalytics } from 'firebase/analytics'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDRiCMeh-4ha62WtoItejVwwKqeYBnljEg',
@@ -11,12 +11,8 @@ const firebaseConfig = {
   measurementId: 'G-63XPP7YHWT',
 }
 
-// Initialize Firebase
+// Firebase 초기화
 const app = initializeApp(firebaseConfig)
-getAnalytics(app)
+const analytics = getAnalytics(app)
 
-function App() {
-  return <div>안녕</div>
-}
-
-export default App
+export { app, analytics }

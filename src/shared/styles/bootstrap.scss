@@ -1,0 +1,6 @@
+@import 'bootstrap/scss/bootstrap';
+
+// Bootstrap 커스텀 프로퍼티로 대입
+:root {
+  --bs-body-font-family: var($body-font-family);
+}

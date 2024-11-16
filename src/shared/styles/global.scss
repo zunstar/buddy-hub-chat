@@ -1,0 +1,5 @@
+@import './reset.scss'; // CSS 초기화
+@import './variables.scss'; // 변수 설정
+@import './mixins.scss'; // 믹스인
+@import './fonts.scss'; // 폰트 설정
+@import './bootstrap.scss'; // Bootstrap 설정 (변수와 믹스인 이후에 위치)
