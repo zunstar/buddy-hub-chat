@@ -1,11 +1,23 @@
-import { ReactNode } from 'react'
+import React from 'react'
+import { useLayout } from '../../shared/context/LayoutContext'
+import Footer from '../../shared/ui/Footer/Footer'
+import Header from '../../shared/ui/header/Header'
+import { useAuth } from '../../shared/context/AuthContext'
 
 type MainLayoutProps = {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  return <div>{children}</div>
+  const { title } = useLayout()
+  const { isAuthenticated } = useAuth()
+  return (
+    <div>
+      {isAuthenticated && <Header title={title} />}
+      <main>{children}</main>
+      {isAuthenticated && <Footer />}
+    </div>
+  )
 }
 
 export default MainLayout

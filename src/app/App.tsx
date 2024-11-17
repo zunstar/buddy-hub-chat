@@ -1,17 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// app/App.tsx
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import AppRoutes from './routes/AppRoutes'
+import { LayoutProvider } from '../shared/context/LayoutContext'
 import MainLayout from './layouts/MainLayout'
-import Home from '../pages/home/Home'
-import Chat from '../pages/chat/Chat'
+import { AuthProvider } from '../shared/context/AuthContext'
 
 const App: React.FC = () => {
   return (
     <Router>
-      <MainLayout>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/chat' element={<Chat />} />
-        </Routes>
-      </MainLayout>
+      <AuthProvider>
+        <LayoutProvider>
+          <MainLayout>
+            <AppRoutes />
+          </MainLayout>
+        </LayoutProvider>
+      </AuthProvider>
     </Router>
   )
 }
