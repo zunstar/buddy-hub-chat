@@ -29,8 +29,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const googleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider)
-      const token = await result.user.getIdToken() // Firebase ID Token
-      localStorage.setItem('authToken', token) // 로컬 스토리지에 토큰 저장
+      const token = await result.user.getIdToken()
+      localStorage.setItem('authToken', token)
       setIsAuthenticated(true)
       navigate('/home')
     } catch (error) {
